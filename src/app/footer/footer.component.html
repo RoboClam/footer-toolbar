@@ -1,0 +1,22 @@
+<footer>
+  <div class="container">
+    <div class="tab-nav-container"  [ngStyle]="{'background-color': getBackgroundColor(id)}">
+      <div class="tab purple active" [ngClass]="{'active': id === 1 }" id="1" (click)="id=1">
+        <i class="fas fa-home unclickable"></i>
+        <p class="unclickable">Home</p>
+      </div>
+      <div class="tab pink" [ngClass]="{'active': id === 2 }" id="2" (click)="id=2">
+        <i class="far fa-heart unclickable"></i>
+        <p class="unclickable">Likes</p>
+      </div>
+      <div class="tab yellow" [ngClass]="{'active': id === 3 }" id="3" (click)="id=3">
+        <i class="fas fa-search unclickable"></i>
+        <p class="unclickable">Search</p>
+      </div>
+      <div class="tab teal" [ngClass]="{'active': id === 4 }" id="4" (click)="id=4">
+        <i class="far fa-user unclickable"></i>
+        <p class="unclickable">Profile</p>
+      </div>
+    </div>
+  </div>
+</footer>
