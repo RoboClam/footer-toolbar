@@ -1,20 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
 /* General Styles */
 * {
 	box-sizing: border-box;
 }
 
-body {
-	font-family: 'Montserrat', sans-serif;
-	background: rgba(91, 55, 183, 1);
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	height: 100vh;
-	margin: 0;
-	transition: background 0.4s linear;
+footer {
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
 }
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+
 
 .container {
 	display: flex;
@@ -84,30 +95,6 @@ body {
 	background-color: rgba(28, 150, 162, 0.2);	
 	color: rgba(28, 150, 162, 1);
 }
-
-footer {
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
-}
-
-footer p {
-    margin: 10px 0;
-}
-
-footer i {
-    color: red;
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
-}
-
 @media (max-width: 450px) {
 	.tab-nav-container {
 		padding: 20px;
