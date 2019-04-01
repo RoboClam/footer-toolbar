@@ -1,6 +1,6 @@
 <footer>
   <div class="container">
-    <div class="tab-nav-container"  [ngStyle]="{'background-color': getBackgroundColor(id)}">
+    <div class="tab-nav-container shadow"  [ngStyle]="{'background-color': getBackgroundColor(id)}">
       <div class="tab purple active" [ngClass]="{'active': id === 1 }" id="1" (click)="id=1">
         <i class="fas fa-home unclickable"></i>
         <p class="unclickable">Home</p>
@@ -9,7 +9,7 @@
         <i class="far fa-heart unclickable"></i>
         <p class="unclickable">Likes</p>
       </div>
-      <div class="tab yellow" [ngClass]="{'active': id === 3 }" id="3" (click)="id=3">
+      <div class="tab green" [ngClass]="{'active': id === 3 }" id="3" (click)="id=3">
         <i class="fas fa-search unclickable"></i>
         <p class="unclickable">Search</p>
       </div>

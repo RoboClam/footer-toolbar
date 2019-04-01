@@ -36,14 +36,16 @@ footer a {
 
 /* Tab styles */
 .tab-nav-container {
-	border-bottom-right-radius: 30px;
-	border-bottom-left-radius: 30px;
+	border-radius: 30px;
+	// border-bottom-right-radius: 30px;
+	// border-bottom-left-radius: 30px;
   	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 
 		0 3px 6px rgba(0,0,0,0.23);
 	display: flex;
 	justify-content: space-between;
 	padding: 30px;
-	width: 450px;
+	width: 100%;
+	// width: 450px;
 	
 	margin-top: -70px;
 }
@@ -77,28 +79,35 @@ footer a {
 }
 
 .tab.active.purple {
-	background-color: rgba(91, 55, 183, 0.2);
+	// background-color: rgba(91, 55, 183, 0.2);
 	color: rgba(91, 55, 183, 1);
 }
 
 .tab.active.pink {
-	background-color: rgba(201, 55, 157, 0.2);	
+	// background-color: rgba(201, 55, 157, 0.2);	
 	color: rgba(201, 55, 157, 1);
 }
 
-.tab.active.yellow {
-	background-color: rgba(230, 169, 25, 0.2);	
-	color: rgba(230, 169, 25, 1);
+.tab.active.green {
+	// background-color: rgba(230, 169, 25, 0.2);	
+	color: rgba(0, 170, 0, 1);
 }
 
 .tab.active.teal {
-	background-color: rgba(28, 150, 162, 0.2);	
+	// background-color: rgba(28, 150, 162, 0.2);	
 	color: rgba(28, 150, 162, 1);
 }
+
+.shadow {
+	-moz-box-shadow:    inset 0px -3px 5px 6px #d3e2fc;
+	-webkit-box-shadow: inset 0px -3px 5px 6px #d3e2fc;
+	box-shadow:         inset 0px -3px 5px 6px #d3e2fc;
+  }
+
 @media (max-width: 450px) {
 	.tab-nav-container {
 		padding: 20px;
-		width: 350px;
+		width: 100%;
 	}
 	
 	.tab {
@@ -113,4 +122,11 @@ footer a {
 
 .unclickable {
 	pointer-events: none;
+}
+
+@media (max-height: 400px) {
+	.tab-nav-container {
+		padding: 10px;
+		margin: 0px;
+	}
 }

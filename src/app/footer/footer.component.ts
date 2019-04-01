@@ -11,7 +11,7 @@ export class FooterComponent implements OnInit {
   map: Map<number, String> = new Map([
     [1, 'rgba(91, 55, 183, 0.2)'], 
     [2, 'rgba(201, 55, 157, 0.2)'], 
-    [3, 'rgba(230, 169, 25, 0.2)'], 
+    [3, 'rgba(0, 170, 0, 0.2)'], 
     [4, 'rgba(28, 150, 162, 0.2)']]);
     
   constructor() { }
