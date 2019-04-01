@@ -7,84 +7,79 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonSliderComponent implements OnInit {
 
+  EPSILON: number = 50;
   initialX: number = 0;
   finalX: number = 0;
+  currentX: number = 0;
+  clientWidth: number = 0;
+
+  sideAmount: number = .9;
+
+  target: any = null;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  onPan(evt: any) {
-    var swipeMe = evt.target;
-    
-    var transformStyle = 'translateX(' + evt.center.x + 'px)';
-
-    swipeMe.style.transition = 'all 150ms ease-out';
-    swipeMe.style.webkitTransform = transformStyle;
-    swipeMe.style.transform = transformStyle;
+  onPanStart(evt: any) {
+    this.target = evt.target
+    this.clientWidth = evt.target.clientWidth - 10;
+    this.initialX = Number(evt.center.x);
   }
 
-  onPanStart(evt: any) {
-    this.initialX = Number(evt.center.x);
+  onPan(evt: any) {
+    let deltaX = evt.center.x - Math.abs(this.finalX - this.initialX);
+    this.translate(evt.target, this.currentX + deltaX);
   }
 
   onPanEnd(evt: any) {
     this.finalX = Number(evt.center.x);
-    if(this.finalX - this.initialX > 0) {
-      this.rightSide(evt);
+    let deltaX = Math.abs(this.finalX - this.initialX);
+
+    if (deltaX > this.EPSILON) {
+      if (this.finalX > this.initialX) {
+        this.snapRight(evt);
+      }
+      else {
+        this.snapCenter(evt);
+      }
     }
-    if(this.finalX - this.initialX < 0) {
-      this.leftSide(evt);
+    else {
+      this.snapCenter(evt);
     }
   }
 
-  rightSide(evt: any) {
-    var swipeMe = evt.target;
+  snapRight(evt: any) {
+    this.currentX = document.getElementsByTagName("body").item(0).clientWidth * this.sideAmount;
+    this.translate(evt.target, this.currentX);
+    this.resetX();
+  }
 
-    let rightSide:number = document.getElementsByTagName("body").item(0).clientWidth * .9; 
-    
-    var transformStyle = 'translateX(' + rightSide + 'px)';
+  snapCenter(evt: any) {
+    this.translate(evt.target, 0);
+    this.currentX = 0;
+    this.resetX();
+  }
 
+  translate(swipeMe: any, amount: number) {
     swipeMe.style.transition = 'all 150ms ease-out';
+    let transformStyle = 'translateX(' + amount + 'px)';
     swipeMe.style.webkitTransform = transformStyle;
+    swipeMe.style.MozTransform = transformStyle;
+    swipeMe.style.msTransform = transformStyle;
     swipeMe.style.transform = transformStyle;
   }
 
-  leftSide(evt: any) {
-    var swipeMe = evt.target;
-
-    let leftSide:number = document.getElementsByTagName("body").item(0).clientWidth * -.9; 
-    
-    var transformStyle = 'translateX(' + leftSide + 'px)';
-
-    swipeMe.style.transition = 'all 150ms ease-out';
-    swipeMe.style.webkitTransform = transformStyle;
-    swipeMe.style.transform = transformStyle;
+  resetX() {
+    this.initialX = 0;
+    this.finalX = 0;
   }
 
-  onPanRight(evt: any) {
-    // var swipeMe = evt.target;
-    
-    // let deltaX: number  = Number(evt.deltaX);
-    // // console.log(deltaX);
-
-    // var transformStyle = 'translateX(' + deltaX + 'px)';
-
-    // swipeMe.style.transition = 'all 150ms ease-out';
-    // swipeMe.style.webkitTransform = transformStyle;
-    // swipeMe.style.transform = transformStyle;
+  sideViewChange() {
+    if (this.sideAmount > 0 && this.target != null) {
+      this.currentX = document.getElementsByTagName("body").item(0).clientWidth * this.sideAmount;
+      this.translate(this.target, this.currentX);
+    }
   }
-  
-  onPanLeft(evt: any) {
-    // var swipeMe = evt.target;
-    
-    // let deltaX: number  = Number(evt.deltaX);
-    
-    // var transformStyle = 'translateX(' + deltaX + 'px)';
-
-    // swipeMe.style.transition = 'all 150ms ease-out';
-    // swipeMe.style.webkitTransform = transformStyle;
-    // swipeMe.style.transform = transformStyle;
-  }
-
 }

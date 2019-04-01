@@ -8,14 +8,14 @@
     overflow: hidden;
   }
   
-  .swipe-element {
+  .pan-element {
     position: relative;
   
     width: 100%;
     height: 60px;
   }
   
-  .swipe-front {
+  .pan-front {
     position: absolute;
   
     width: 100%;
@@ -45,7 +45,7 @@
     /* // [END touch-action-example] */
   }
   
-  .swipe-back {
+  .pan-back {
     position: absolute;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -73,7 +73,7 @@
     box-sizing: border-box;
   }
   
-  .swipe-back button {
+  .pan-back button {
     display: inline-block;
   
     width: 40px;
@@ -85,15 +85,15 @@
     border-style: none;
   }
   
-  .swipe-back button:nth-child(2) {
+  .pan-back button:nth-child(2) {
     background-color: #0f9d58;
   }
   
-  .swipe-back button:nth-child(3) {
+  .pan-back button:nth-child(3) {
     background-color: #cb4437;
   }
   
-  .swipe-back button:nth-child(4) {
+  .pan-back button:nth-child(4) {
     background-color: #f4b400;
   }
   
