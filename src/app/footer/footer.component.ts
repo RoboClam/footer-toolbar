@@ -19,6 +19,9 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngAfterViewInit() {
+  }
+
   getBackgroundColor() {
     return this.map.get(this.id);
   }

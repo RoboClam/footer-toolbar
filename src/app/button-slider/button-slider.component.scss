@@ -101,3 +101,12 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
+
+  input[type="number"] {
+    text-align: center;
+    background: transparent;
+    border: none;
+  }
+  input[type="number"]:focus {
+    outline: none;
+  }

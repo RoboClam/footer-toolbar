@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { ButtonSliderComponent } from './button-slider/button-slider.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    ButtonSliderComponent
+    ButtonSliderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

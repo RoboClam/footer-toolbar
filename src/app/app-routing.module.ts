@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ButtonSliderComponent } from './button-slider/button-slider.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  // { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component:  HomeComponent},
+  { path: 'button-slider', component:  ButtonSliderComponent},
   // { path: 'heroes', component: HeroesComponent },
   // { path: 'detail/:id', component: HeroDetailComponent },
   // { path: 'new', component: HeroFormComponent},
