@@ -1,19 +1,19 @@
 <footer>
   <div class="container">
     <div class="tab-nav-container shadow"  [ngStyle]="{'background-color': getBackgroundColor(id)}">
-      <a class="tab purple" [ngClass]="{'active': id === 1 }" id="1" (click)="id=1" routerLink="">
+      <a class="tab purple" [ngClass]="{'active': state === 'home' }" (click)="setActiveState('home')" routerLink="/home">
         <i class="fas fa-home unclickable"></i>
         <p class="unclickable">Home</p>
       </a>
-      <a class="tab pink" [ngClass]="{'active': id === 2 }" id="2" (click)="id=2" routerLink="/button-slider">
+      <a class="tab pink" [ngClass]="{'active': state === 'likes' }" (click)="setActiveState('likes')" routerLink="/likes">
         <i class="far fa-heart unclickable"></i>
         <p class="unclickable">Likes</p>
       </a>
-      <a class="tab green" [ngClass]="{'active': id === 3 }" id="3" (click)="id=3"  routerLink="">
+      <a class="tab green" [ngClass]="{'active': state === 'search' }" (click)="setActiveState('search')"  routerLink="/search">
         <i class="fas fa-search unclickable"></i>
         <p class="unclickable">Search</p>
       </a>
-      <a class="tab teal" [ngClass]="{'active': id === 4 }" id="4" (click)="id=4"  routerLink="">
+      <a class="tab teal" [ngClass]="{'active': state === 'profile' }" (click)="setActiveState('profile')"  routerLink="/profile">
         <i class="far fa-user unclickable"></i>
         <p class="unclickable">Profile</p>
       </a>

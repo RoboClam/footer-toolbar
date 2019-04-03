@@ -6,8 +6,9 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component:  HomeComponent},
-  { path: 'button-slider', component:  ButtonSliderComponent},
-  // { path: 'heroes', component: HeroesComponent },
+  { path: 'likes', component:  ButtonSliderComponent},
+  { path: 'search', component:  HomeComponent},
+  { path: 'profile', component:  HomeComponent},
   // { path: 'detail/:id', component: HeroDetailComponent },
   // { path: 'new', component: HeroFormComponent},
   // { path: 'buttons', component: ButtonsComponent},

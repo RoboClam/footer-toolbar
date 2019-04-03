@@ -7,23 +7,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  id: number = 1;
-  map: Map<number, String> = new Map([
-    [1, 'rgba(91, 55, 183, 0.2)'], 
-    [2, 'rgba(201, 55, 157, 0.2)'], 
-    [3, 'rgba(0, 170, 0, 0.2)'], 
-    [4, 'rgba(28, 150, 162, 0.2)']]);
+  state: string = 'home';
+  map: Map<string, string> = new Map([
+    ['home', 'rgba(91, 55, 183, 0.3)'], 
+    ['likes', 'rgba(201, 55, 157, 0.3)'], 
+    ['search', 'rgba(0, 170, 0, 0.3)'], 
+    ['profile', 'rgba(28, 150, 162, 0.3)']]);
     
   constructor() { }
 
   ngOnInit() {
+    let activeState = localStorage.getItem("footer-active-state");
+    if(activeState) {
+      this.state = activeState;
+    }
+    else {
+      let temp: string[] = window.location.pathname.split("/");
+      this.state = temp[1];
+      if(temp[1] !== 'likes' || temp[1] !== 'home') {
+        this.state = 'home';
+      }
+      localStorage.setItem("footer-active-state", this.state);
+    }
   }
 
   ngAfterViewInit() {
   }
 
+  setActiveState(state: string) {
+    this.state = state;
+    localStorage.setItem("footer-active-state", state);
+  }
+
   getBackgroundColor() {
-    return this.map.get(this.id);
+    return this.map.get(this.state);
   }
 
 }
