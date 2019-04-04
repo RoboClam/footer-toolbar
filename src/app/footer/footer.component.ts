@@ -17,18 +17,11 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let activeState = localStorage.getItem("footer-active-state");
-    if(activeState) {
-      this.state = activeState;
-    }
-    else {
       let temp: string[] = window.location.pathname.split("/");
       this.state = temp[1];
-      if(temp[1] !== 'likes' || temp[1] !== 'home') {
+      if(!this.map.has(this.state)){
         this.state = 'home';
       }
-      localStorage.setItem("footer-active-state", this.state);
-    }
   }
 
   ngAfterViewInit() {
@@ -36,7 +29,6 @@ export class FooterComponent implements OnInit {
 
   setActiveState(state: string) {
     this.state = state;
-    localStorage.setItem("footer-active-state", state);
   }
 
   getBackgroundColor() {

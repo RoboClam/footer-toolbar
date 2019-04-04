@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'likes', component:  ButtonSliderComponent},
   { path: 'search', component:  SearchComponent},
   { path: 'profile', component:  ProfileComponent},
+  { path: '**', redirectTo: '/home'},
   // { path: 'detail/:id', component: HeroDetailComponent },
 ];
 
