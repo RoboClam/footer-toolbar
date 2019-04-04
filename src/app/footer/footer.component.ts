@@ -9,10 +9,10 @@ export class FooterComponent implements OnInit {
 
   state: string = 'home';
   map: Map<string, string> = new Map([
-    ['home', 'rgba(91, 55, 183, 0.3)'], 
-    ['likes', 'rgba(201, 55, 157, 0.3)'], 
-    ['search', 'rgba(0, 170, 0, 0.3)'], 
-    ['profile', 'rgba(28, 150, 162, 0.3)']]);
+    ['home', 'rgba(0, 0, 0, 0.2)'], 
+    ['likes', 'rgba(0, 0, 0, 0.2)'], 
+    ['search', 'rgba(0, 0, 0, 0.2)'], 
+    ['profile', 'rgba(0, 0, 0, 0.2)']]);
     
   constructor() { }
 

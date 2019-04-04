@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-button-slider',
-  templateUrl: './button-slider.component.html',
-  styleUrls: ['./button-slider.component.scss']
+  selector: 'app-likes',
+  templateUrl: './likes.component.html',
+  styleUrls: ['./likes.component.scss']
 })
-export class ButtonSliderComponent implements OnInit {
+export class LikesComponent implements OnInit {
 
   EPSILON: number = 50;
   initialX: number = 0;

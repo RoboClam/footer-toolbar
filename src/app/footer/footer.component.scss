@@ -22,7 +22,7 @@ footer i {
 }
 
 footer a {
-    color: #3c97bf;
+    color: rgba(0, 0, 0, .75);
     text-decoration: none;
 }
 
@@ -36,11 +36,11 @@ footer a {
 
 /* Tab styles */
 .tab-nav-container {
-	border-radius: 30px;
+	// border-radius: 30px;
 	// border-bottom-right-radius: 30px;
 	// border-bottom-left-radius: 30px;
-  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 
-		0 3px 6px rgba(0,0,0,0.23);
+  	// box-shadow: 0 3px 6px rgba(0,0,0,0.16), 
+	// 	0 3px 6px rgba(0,0,0,0.23);
 	display: flex;
 	justify-content: space-between;
 	padding: 30px;
@@ -80,28 +80,31 @@ footer a {
 
 .tab.active.purple {
 	// background-color: rgba(91, 55, 183, 0.2);
-	color: rgba(91, 55, 183, 1);
+	color: rgba(0, 0, 0, 1);
 }
 
 .tab.active.pink {
 	// background-color: rgba(201, 55, 157, 0.2);	
-	color: rgba(201, 55, 157, 1);
+	color: rgba(0, 0, 0, 1);
 }
 
 .tab.active.green {
 	// background-color: rgba(230, 169, 25, 0.2);	
-	color: rgba(0, 170, 0, 1);
+	color: rgba(0, 0, 0, 1);
 }
 
 .tab.active.teal {
 	// background-color: rgba(28, 150, 162, 0.2);	
-	color: rgba(28, 150, 162, 1);
+	color: rgba(0, 0, 0, 1);
 }
 
 .shadow {
-	-moz-box-shadow:    inset 0px -3px 5px 6px #d3e2fc;
-	-webkit-box-shadow: inset 0px -3px 5px 6px #d3e2fc;
-	box-shadow:         inset 0px -3px 5px 6px #d3e2fc;
+	// -moz-box-shadow:    inset 0px -3px 5px 6px #d3e2fc;
+	// -webkit-box-shadow: inset 0px -3px 5px 6px #d3e2fc;
+	// box-shadow:         inset 0px -3px 5px 6px #d3e2fc;
+	-moz-box-shadow:     0px -3px 10px 6px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:  0px -3px 10px 6px rgba(0, 0, 0, 0.2);
+	box-shadow:          0px -3px 10px 6px rgba(0, 0, 0, 0.2);
   }
 
 @media (max-width: 450px) {
