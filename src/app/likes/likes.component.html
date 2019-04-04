@@ -1,18 +1,13 @@
 <section class="content">
     <div class="pan-element">
-        <div class="pan-back">
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
+        <div id="top-pan-element" class="pan-front promote-layer" (panstart)="onPanStart($event)" (pan)="onPan($event)"
+            (panend)="onPanEnd($event)">
+            <div class="swipe-options">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
         </div>
-        <p id="top-pan-element" class="pan-front promote-layer" 
-            (panstart)="onPanStart($event)"
-            (pan)="onPan($event)" 
-            (panend)="onPanEnd($event)">Pan Me</p>
     </div>
-</section>
-
-<section class="content">
-    <input type="number" [(ngModel)]="sideAmount" (keyup)="sideViewChange()">
 </section>

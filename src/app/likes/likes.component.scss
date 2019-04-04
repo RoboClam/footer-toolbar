@@ -1,5 +1,3 @@
-
-
 .content {
     width: 100%;
     padding: 32px;
@@ -44,8 +42,13 @@
     touch-action: none;
     /* // [END touch-action-example] */
   }
+  @media only screen and (max-width: 400px) {
+    .pan-front {
+      transform: translateX(300px);
+    }
+  }
   
-  .pan-back {
+  .swipe-options {
     position: absolute;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -71,9 +74,11 @@
   
     padding: 0 10px;
     box-sizing: border-box;
+
+    
   }
   
-  .pan-back button {
+  .button {
     display: inline-block;
   
     width: 40px;
@@ -85,15 +90,15 @@
     border-style: none;
   }
   
-  .pan-back button:nth-child(2) {
+  .button:nth-child(2) {
     background-color: #0f9d58;
   }
   
-  .pan-back button:nth-child(3) {
+  .button:nth-child(3) {
     background-color: #cb4437;
   }
   
-  .pan-back button:nth-child(4) {
+  .button:nth-child(4) {
     background-color: #f4b400;
   }
   
