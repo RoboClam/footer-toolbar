@@ -10,7 +10,7 @@ export class LikesComponent implements OnInit {
   EPSILON: number = 50;
   initialX: number = 0;
   finalX: number = 0;
-  width: number = 0;
+  offsetWidth: number = 0;
   currentX: number = 0;
 
   sideAmount: number = .833;
@@ -20,12 +20,16 @@ export class LikesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.width = document.getElementsByTagName("body").item(0).clientWidth * this.sideAmount;
-    this.currentX = this.width;
+    this.target = document.getElementById("top-pan-element");
+    let clientWidth = this.target.clientWidth;
+    if (clientWidth > 770) {
+      this.sideAmount = .95;
+    }
+    this.offsetWidth = clientWidth * this.sideAmount;
+    this.currentX = this.offsetWidth;
   }
 
   onPanStart(evt: any) {
-    this.target = document.getElementById("top-pan-element");
     this.initialX = Number(evt.center.x);
   }
 
@@ -52,8 +56,8 @@ export class LikesComponent implements OnInit {
   }
 
   snapRight(evt: any) {
-    this.translate(this.target, this.width);
-    this.currentX = this.width;
+    this.translate(this.target, this.offsetWidth);
+    this.currentX = this.offsetWidth;
     this.resetX();
   }
 
@@ -77,10 +81,19 @@ export class LikesComponent implements OnInit {
     this.finalX = 0;
   }
 
-  sideViewChange() {
-    if (this.sideAmount > 0 && this.target != null) {
-      this.width = document.getElementsByTagName("body").item(0).clientWidth * this.sideAmount;
-      this.translate(this.target, this.width);
-    }
+  blueButtonClick(evt: Event) {
+    console.log("blue");
+  }
+
+  greenButtonClick(evt: Event) {
+    console.log("green");
+  }
+
+  redButtonClick(evt: Event) {
+    console.log("red");
+  }
+
+  yellowButtonClick(evt: Event) {
+    console.log("yellow");
   }
 }

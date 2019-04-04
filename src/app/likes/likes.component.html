@@ -3,10 +3,10 @@
         <div id="top-pan-element" class="pan-front promote-layer" (panstart)="onPanStart($event)" (pan)="onPan($event)"
             (panend)="onPanEnd($event)">
             <div class="swipe-options">
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
+                <button (click)="blueButtonClick($event)"></button>
+                <button (click)="greenButtonClick($event)"></button>
+                <button (click)="redButtonClick($event)"></button>
+                <button (click)="yellowButtonClick($event)"></button>
             </div>
         </div>
     </div>
